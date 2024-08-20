@@ -1,4 +1,13 @@
 `timescale 1ns / 1ps
+
+module full_add(a,b,cin,sum,cout);
+input a,b,cin;
+output sum,cout;
+assign sum = a^b^cin;
+assign cout = (a&b)|(b&cin)|(cin&a);
+endmodule
+
+
 module adder_8bit(a,b,cin,sum,cout);
 input [07:0] a;
 input [07:0] b;
